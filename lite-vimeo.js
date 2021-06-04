@@ -106,8 +106,6 @@ export class LiteVimeoEmbed extends HTMLElement {
         #frame, #fallbackPlaceholder, iframe {
           border: 0;
           position: absolute;
-          //   width: 100%;
-          //   height: 100%;
           width: calc(100% + 2px);
           height: calc(100% + 2px);
           left: -1px;
@@ -122,20 +120,6 @@ export class LiteVimeoEmbed extends HTMLElement {
           object-fit: cover;
         }
 
-        // #frame::before {
-        //   content: '';
-        //   display: block;
-        //   position: absolute;
-        //   top: 0;
-        //   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);
-        //   background-position: top;
-        //   background-repeat: repeat-x;
-        //   height: 60px;
-        //   padding-bottom: 50px;
-        //   width: 100%;
-        //   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
-        //   z-index: 1;
-        // }
         /* play button */
         .lvo-playbtn {
           width: 84px;
@@ -143,23 +127,15 @@ export class LiteVimeoEmbed extends HTMLElement {
           background-color: #000000;
           background-color: rgba(0, 0, 0, 0.72);
           z-index: 1;
-        //   opacity: 0.5;
           border-radius: 70px;
           transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
           border: 1px solid #FF4512;
         }
         #frame:hover .lvo-playbtn {
-        //   background-color: rgb(98, 175, 237);
           background-color: rgb(255, 69, 18);
           opacity: 1;
         }
-        /* play button triangle */
-        // .lvo-playbtn:before {
-        //   content: '';
-        //   border-style: solid;
-        //   border-width: 11px 0 11px 16px;
-        //   border-color: transparent transparent transparent #fff;
-        // }
+
         .lvo-playbtn {
           position: absolute;
           top: 50%;
@@ -174,18 +150,9 @@ export class LiteVimeoEmbed extends HTMLElement {
           letter-spacing: 3.14px;
           line-height: 36px;
           text-align: center;
+          text-transform: uppercase;
           transform: translate(2px, 0px);
         }
-        // .lvo-playbtn,
-        // .lvo-playbtn:before {
-        //   position: absolute;
-        //   top: 50%;
-        //   left: 50%;
-        //   transform: translate3d(-50%, -50%, 0);
-        // }
-        // .lvo-playbtn:before {
-        //   transform: translate3d(-45%, -50%, 0);
-        // }
 
         /* Post-click styles */
         .lvo-activated {
@@ -208,7 +175,9 @@ export class LiteVimeoEmbed extends HTMLElement {
                decoding="async"
                loading="lazy">
         </picture>
-        <button class="lvo-playbtn"></button>
+        <button class="lvo-playbtn">
+            <div class="lvo-playbtn-text">PLAY</div>
+        </button>
       </div>
     `;
         this.domRefFrame = this.shadowRoot.querySelector('#frame');
