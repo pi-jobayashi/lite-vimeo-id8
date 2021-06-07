@@ -137,6 +137,7 @@ export class LiteVimeoEmbed extends HTMLElement {
         }
 
         .lvo-playbtn {
+          cursor: pointer;
           position: absolute;
           top: 50%;
           left: 50%;
